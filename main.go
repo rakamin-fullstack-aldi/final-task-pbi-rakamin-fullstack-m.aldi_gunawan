@@ -7,13 +7,10 @@ import (
 )
 
 func main() {
-	// Koneksi ke database
 	models.ConnectDatabase()
 
-	// Setup Gin router
 	router := gin.Default()
 
-	// Middleware untuk autentikasi JWT
 	router.Use(handlers.AuthMiddleware())
 
 	// Route untuk endpoint pengguna
@@ -28,6 +25,5 @@ func main() {
 	router.PUT("/photos/:photoId", handlers.UpdatePhotoHandler)
 	router.DELETE("/photos/:photoId", handlers.DeletePhotoHandler)
 
-	// Menjalankan server
 	router.Run(":8080")
 }

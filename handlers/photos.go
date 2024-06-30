@@ -16,7 +16,6 @@ func CreatePhotoHandler(c *gin.Context) {
 		return
 	}
 
-	// Pastikan URL foto tidak kosong
 	if newPhoto.PhotoUrl == "" {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "PhotoUrl is required"})
 		return
