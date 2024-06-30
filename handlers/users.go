@@ -72,8 +72,6 @@ func UpdateUserHandler(c *gin.Context) {
 		return
 	}
 
-	// Tambahkan logika otorisasi di sini untuk memastikan hanya pengguna yang bersangkutan yang dapat memperbarui data
-
 	// Bind data yang diperbarui dari request
 	if err := c.ShouldBindJSON(&user); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid request payload"})
