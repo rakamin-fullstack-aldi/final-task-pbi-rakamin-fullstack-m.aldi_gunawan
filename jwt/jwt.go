@@ -16,7 +16,7 @@ type Claims struct {
 }
 
 func GenerateToken(user *models.User) (string, error) {
-	expirationTime := time.Now().Add(24 * time.Hour) // Contoh: Token berlaku selama 1 hari
+	expirationTime := time.Now().Add(24 * time.Hour)
 
 	claims := &Claims{
 		UserID: user.ID,
